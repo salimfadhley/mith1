@@ -16,6 +16,11 @@ app = Flask(__name__)
 def hello():
     return open("templates/index.html").read()
 
+@app.route("/style.css")
+def style():
+    return open("templates/style.css").read()
+
+
 @app.route("/pages.json")
 def pages():
     return json.dumps(PAGES)
